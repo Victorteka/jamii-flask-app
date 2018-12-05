@@ -1,6 +1,6 @@
 import unittest
 from app.models.models import User, Businesses
-from werkzeug.security import check_password_hash, generate_password_hash
+
 
 class TestModel(unittest.TestCase):
     def setUp(self):
@@ -23,6 +23,4 @@ class TestModel(unittest.TestCase):
         motorhub = Businesses()
         self.assertTrue(type(motorhub) is Businesses)
 
-    # def test_check_password_method(self):
-    #     result = self.user.check_password(check_password_hash(self.user.set_password('mypassword'),'mypassword'))
-    #     self.assertEqual(result, True)
+  
