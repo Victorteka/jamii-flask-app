@@ -46,3 +46,8 @@ class ReviewForm(FlaskForm):
     review_headline = StringField('Review Headline', validators = [DataRequired()])
     comment = TextAreaField('Comment', validators = [DataRequired()])
     submit = SubmitField('Leave a Comment')
+
+#search form
+class SearchForm(FlaskForm):
+    location = StringField(validators = [DataRequired()])
+    submit =SubmitField()
