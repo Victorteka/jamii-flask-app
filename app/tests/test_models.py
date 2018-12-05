@@ -1,6 +1,7 @@
 import unittest
 from app.models.models import User, Businesses
 
+
 class TestModel(unittest.TestCase):
     def setUp(self):
         self.user = User()
@@ -22,4 +23,4 @@ class TestModel(unittest.TestCase):
         motorhub = Businesses()
         self.assertTrue(type(motorhub) is Businesses)
 
-
+  
