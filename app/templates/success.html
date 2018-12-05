@@ -7,6 +7,11 @@
 {% block content %}
 <div class="content-bs">
 <h1>Businesses in Jamii Area</h1>
+<form action="", method="POST" class="search-form">
+    {{form.hidden_tag() }}
+    <input type="text" placeholder="Enter location"  value="{{request.form.location }}">
+    <input class="btn btn-primary" type="submit" value="Search">
+</form>
 {% for business in businesses%}
 <div class="jumbotron">
 <h3><a href="{{ url_for('single_business', business_id = business.id) }}">Business Name: {{ business.name }}</a></h3><br>

@@ -1,6 +1,6 @@
 from flask import render_template, flash, url_for, redirect, request, abort
 from app import app, db
-from app.forms.forms import RegisterForm, LoginForm, BusinessesForm, ReviewForm
+from app.forms.forms import RegisterForm, LoginForm, BusinessesForm, ReviewForm, SearchForm
 from flask_login import login_user, logout_user, current_user, login_required
 from app.models.models import User, Businesses, Review
 
@@ -64,10 +64,15 @@ def businesses():
     return render_template('business.html', title = 'Business', form = form, legend = 'Register Business', btn = 'Register')
 
 #route that display all registered businesses
-@app.route('/available-business')
+@app.route('/available-business', methods =[ 'GET', 'POST'])
 def available():
+    form = SearchForm()
     businesses = Businesses.query.all()
-    return render_template('success.html', businesses = businesses)
+    locations = Businesses.query.filter_by(location = form.location.data).all()
+    if locations:
+        return redirect('location.html', locations = locations, form = form)
+
+    return render_template('success.html', businesses = businesses, form = form)
 
 #route that get business by id
 @app.route('/businesses/<int:business_id>')

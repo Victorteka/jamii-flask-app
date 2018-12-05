@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+{% for location in locations%}
+<h3>location.name</h3>
+<h5>location.business_description</h5>
+{% endfor %}
+{% endblock %}
