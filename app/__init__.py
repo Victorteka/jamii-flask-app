@@ -5,8 +5,10 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
+app.config['WHOOSH_BASE'] = 'whoosh'
 
 #initializing db
 db = SQLAlchemy(app)

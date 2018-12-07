@@ -7,9 +7,9 @@
 {% block content %}
 <div class="content-bs">
 <h1>Businesses in Jamii Area</h1>
-<form action="", method="POST" class="search-form">
+<form action="search", method="GET" class="search-form">
     {{form.hidden_tag() }}
-    <input type="text" placeholder="Enter location"  value="{{request.form.location }}">
+    <input type="text" placeholder="Enter location" name="query" id="query">
     <input class="btn btn-primary" type="submit" value="Search">
 </form>
 {% for business in businesses%}
