@@ -1,8 +1,11 @@
-from app import db
+from app import app, db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login_manager
 from datetime import date, datetime
+
+
+
 
 class User(UserMixin, db.Model):
     """
@@ -50,6 +53,7 @@ class Businesses(db.Model):
 
     def __repr__(self):
         return f'{self.name} is located at {self.location}'
+
 
 class Review(db.Model):
     """

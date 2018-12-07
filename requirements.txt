@@ -1,4 +1,5 @@
 alembic==1.0.3
+blinker==1.4
 certifi==2018.11.29
 chardet==3.0.4
 Click==7.0
@@ -8,6 +9,7 @@ Flask==1.0.2
 Flask-Login==0.4.1
 Flask-Migrate==2.3.0
 Flask-SQLAlchemy==2.3.2
+Flask-WhooshAlchemy==0.56
 Flask-WTF==0.14.2
 gunicorn==19.9.0
 idna==2.7
@@ -24,4 +26,5 @@ six==1.11.0
 SQLAlchemy==1.2.14
 urllib3==1.24.1
 Werkzeug==0.14.1
+Whoosh==2.7.4
 WTForms==2.2.1

@@ -11,6 +11,7 @@ from app.models.models import User, Businesses, Review
 def home():
     return render_template('home.html')
 
+
 #register route
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -68,10 +69,6 @@ def businesses():
 def available():
     form = SearchForm()
     businesses = Businesses.query.all()
-    locations = Businesses.query.filter_by(location = form.location.data).all()
-    if locations:
-        return redirect('location.html', locations = locations, form = form)
-
     return render_template('success.html', businesses = businesses, form = form)
 
 #route that get business by id
@@ -130,5 +127,6 @@ def review(business_id):
 #route to get all reviews
 @app.route('/businesses/<int:business_id>/reviews')
 def get_review(business_id):
-    reviews = Review.query.get_or_404(business_id)
+    reviews = Review.query.all()
     return render_template('all_reviews.html', reviews = reviews)
+
