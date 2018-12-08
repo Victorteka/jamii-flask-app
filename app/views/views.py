@@ -67,7 +67,6 @@ def businesses():
 #route that display all registered businesses
 @app.route('/available-business', methods =[ 'GET', 'POST'])
 def available():
-    form = SearchForm()
     businesses = Businesses.query.all()
     return render_template('success.html', businesses = businesses, form = form)
 
