@@ -68,7 +68,7 @@ def businesses():
 @app.route('/available-business', methods =[ 'GET', 'POST'])
 def available():
     businesses = Businesses.query.all()
-    return render_template('success.html', businesses = businesses, form = form)
+    return render_template('success.html', businesses = businesses)
 
 #route that get business by id
 @app.route('/businesses/<int:business_id>')
